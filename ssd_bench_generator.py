@@ -19,7 +19,7 @@ for i in range(0, num_devices):
         
     devices.append('%s%s' % (device_prefix, device_suffix))
 
-base_command = 'fio --ioengine=libaio --invalidate=1 --ramp_time=5 --size=%s --runtime=30 --time_based' % (file_size)
+base_command = 'fio --ioengine=libaio --invalidate=1 --ramp_time=5 --size=%s --runtime=600 --time_based' % (file_size)
 print('#!/usr/bin/env bash')
 print('mkdir results')
 print('cd results')
