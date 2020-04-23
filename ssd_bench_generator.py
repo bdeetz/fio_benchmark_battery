@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 
-job_counts = [1, 4, 8]
-read_percents = [100, 60, 40, 20]
-block_sizes = ['4k', '16k', '128k', '512k', '1M', '4M']
-io_depths = [1, 8, 16, 32, 64, 128]
+# job_counts = [1, 4, 8]
+# read_percents = [100, 60, 40, 20]
+# block_sizes = ['4k', '16k', '128k', '512k', '1M', '4M']
+# io_depths = [1, 8, 16, 32, 64, 128]
+
+job_counts = [4]
+read_percents = [60]
+block_sizes = ['1M']
+io_depths = [16]
 
 base_command = 'fio --ioengine=libaio --invalidate=1 --ramp_time=5 --size=10GB --runtime=30 --time_based --filename=/mnt/ssd/fio-10g'
 
