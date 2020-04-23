@@ -20,10 +20,10 @@ for i in range(0, num_devices):
     devices.append('%s%s' % (device_prefix, device_suffix))
 
 base_command = 'fio --ioengine=libaio --invalidate=1 --ramp_time=5 --size=%s --runtime=30 --time_based' % (file_size)
-
-print 'mkdir results'
-print 'cd results'
-print 'basedir=`pwd`'
+print('#!/usr/bin/env bash')
+print('mkdir results')
+print('cd results')
+print('basedir=`pwd`')
 
 for job_count in job_counts:
     for read_percent in read_percents:
