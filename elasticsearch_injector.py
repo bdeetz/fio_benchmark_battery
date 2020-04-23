@@ -11,7 +11,7 @@ import time
 
 hostname = socket.gethostname()
 
-es = elasticsearch.Elasticsearch([{'host': 'effie.laureateinstitute.org'}])
+es = elasticsearch.Elasticsearch([{'host': 'ELASTICSEARCH_SERVER_NAME'}])
 
 #MAPPING DEFINITION
 #scan_name
@@ -141,25 +141,3 @@ for root, dirs, files in os.walk('.', topdown=False):
                         print 'retrying'
 #1_0_128k_1_buffered_bw.results_bw.1.log      1_0_128k_1_buffered_lat.results_clat.1.log   1_0_128k_1_buffered_lat.results_slat.1.log
 #1_0_128k_1_buffered_iops.results_iops.1.log  1_0_128k_1_buffered_lat.results_lat.1.log
-
-
-#res = es.index(index="test-index", doc_type='tweet', id=1, body=doc)
-
-
-#
-#doc = {
-#    'author': 'kimchy',
-#    'text': 'Elasticsearch: cool. bonsai cool.',
-#    'timestamp': datetime.now(),
-#}
-#print(res['result'])
-#
-#res = es.get(index="test-index", doc_type='tweet', id=1)
-#print(res['_source'])
-#
-#es.indices.refresh(index="test-index")
-#
-#res = es.search(index="test-index", body={"query": {"match_all": {}}})
-#print("Got %d Hits:" % res['hits']['total'])
-#for hit in res['hits']['hits']:
-#    print("%(timestamp)s %(author)s: %(text)s" % hit["_source"])
