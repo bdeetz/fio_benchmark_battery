@@ -48,11 +48,13 @@ for job_count in job_counts:
 
                 print('for pid in ${pids[@]}')
                 print('do')
-                print('    ret=`kill -0 ${pid}`')	
+                print('    kill -0 ${pid}')
+                print('    ret=$?')	
                 print('    while [[ ${ret} -ne 0 ]]')
                 print('    do')
                 print('        sleep 1')
-                print('        ret=`kill -0 ${pid}`')
+                print('        kill -0 ${pid}')
+                print('        ret=$?')
                 print('    done')
                 print('done')
 
@@ -88,11 +90,13 @@ for job_count in job_counts:
 
                 print('for pid in ${pids[@]}')
                 print('do')
-                print('    ret=`kill -0 ${pid}`')	
+                print('    kill -0 ${pid}')
+                print('    ret=$?')	
                 print('    while [[ ${ret} -ne 0 ]]')
                 print('    do')
                 print('        sleep 1')
-                print('        ret=`kill -0 ${pid}`')
+                print('        kill -0 ${pid}')
+                print('        ret=$?')
                 print('    done')
                 print('done')
 
