@@ -14,8 +14,8 @@ for i in range(0, num_devices):
     
     if not device_suffix.isalpha():
         i = i - 21
-        device_prefix = "sda"
-        device_suffix = chr(ord("a") + i)
+        device_prefix = "xvd"
+        device_suffix = chr(ord("b") + i)
         
     devices.append('%s%s' % (device_prefix, device_suffix))
 
