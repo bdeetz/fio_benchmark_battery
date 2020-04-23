@@ -30,7 +30,7 @@ for job_count in job_counts:
         for block_size in block_sizes:
             for io_depth in io_depths:
                 for device in devices:
-                    print 'mkdir -p %s/%d/%d/%s/%d/direct' % (device, job_count, read_percent, block_size, io_depth)
+                    print('mkdir -p %s/%d/%d/%s/%d/direct' % (device, job_count, read_percent, block_size, io_depth))
 
 
 for job_count in job_counts:
@@ -38,8 +38,8 @@ for job_count in job_counts:
         for block_size in block_sizes:
             for io_depth in io_depths:
                 for device in devices:
-                    print 'cd %s/%d/%d/%s/%d/direct' % (device, job_count, read_percent, block_size, io_depth)
-                    print '%s --filename=/mnt/%s/fio-5g --name=%d_%d_%s_%d_direct --direct=1 --sync=1 --numjobs=%d --iodepth=%d --bs=%s --rw=randrw --rwmixread=%d --write_bw_log=%d_%d_%s_%d_direct_bw.results --write_iops_log=%d_%d_%s_%d_direct_iops.results --write_lat_log=%d_%d_%s_%d_direct_lat.results&' % (base_command, device, job_count, read_percent, block_size, io_depth, job_count, io_depth, block_size, read_percent, job_count, read_percent, block_size, io_depth, job_count, read_percent, block_size, io_depth, job_count, read_percent, block_size, io_depth)
-                    print 'cd $basedir'
+                    print('cd %s/%d/%d/%s/%d/direct' % (device, job_count, read_percent, block_size, io_depth))
+                    print('%s --filename=/mnt/%s/fio-5g --name=%d_%d_%s_%d_direct --direct=1 --sync=1 --numjobs=%d --iodepth=%d --bs=%s --rw=randrw --rwmixread=%d --write_bw_log=%d_%d_%s_%d_direct_bw.results --write_iops_log=%d_%d_%s_%d_direct_iops.results --write_lat_log=%d_%d_%s_%d_direct_lat.results&' % (base_command, device, job_count, read_percent, block_size, io_depth, job_count, io_depth, block_size, read_percent, job_count, read_percent, block_size, io_depth, job_count, read_percent, block_size, io_depth, job_count, read_percent, block_size, io_depth))
+                    print('cd $basedir')
 
-print 'cd ..'
+print('cd ..')
